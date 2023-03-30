@@ -10,6 +10,4 @@ RUN apt-get install libxcb-xinerama0
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-COPY . ./movenet
-
-CMD ["python", "movenet/movenet.py"]
+ENTRYPOINT ["/bin/bash"]

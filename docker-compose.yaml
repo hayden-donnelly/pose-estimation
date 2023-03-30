@@ -1,0 +1,13 @@
+version: "1"
+services:
+  app:
+    build: .
+    volumes:
+      - .:/project
+    #deploy:
+    #  resources:
+    #    reservations:
+    #      devices:
+    #        - driver: nvidia
+    #          count: 1
+    #          capabilities: [gpu]

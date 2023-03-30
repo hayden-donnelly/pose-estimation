@@ -26,7 +26,7 @@ def render_keypoints(image, image_width, image_height, keypoints, confidence_thr
     for i in range(scaled_keypoints.shape[0]):
         x, y, score = scaled_keypoints[i]
         if(score > confidence_threshold):
-            cv2.circle(image, (int(x), int(y)), 5, (0, 255, 0), -1)
+            cv2.circle(image, (int(y), int(x)), 5, (0, 255, 0), -1)
 
     # Show image
     #cv2.imshow("Image", image)
@@ -37,7 +37,7 @@ def render_keypoints(image, image_width, image_height, keypoints, confidence_thr
 print(tf.config.list_physical_devices('GPU'))
 
 # Load the input image.
-image_path = 'movenet/data/basketball_guy.jpg'
+image_path = '../data/basketball_guy.jpg'
 image = tf.io.read_file(image_path)
 image = tf.compat.v1.image.decode_jpeg(image)
 image = tf.expand_dims(image, axis=0)
