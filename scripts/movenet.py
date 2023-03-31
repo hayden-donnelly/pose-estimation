@@ -9,6 +9,27 @@ ordered_keypoint_labels = [
     'left hip', 'right hip', 'left knee', 'right knee', 'left ankle', 'right ankle'
 ]
 
+edges = [
+    (0, 1),
+    (0, 2),
+    (1, 3),
+    (2, 4),
+    (0, 5),
+    (0, 6),
+    (5, 7),
+    (7, 9),
+    (6, 8),
+    (8, 10),
+    (5, 6),
+    (5, 11),
+    (6, 12),
+    (11, 12),
+    (11, 13),
+    (13, 15),
+    (12, 14),
+    (14, 16),
+]
+
 print(tf.config.list_physical_devices('GPU'))
 
 # Load the input image.
@@ -44,6 +65,15 @@ for i in range(scaled_keypoints.shape[0]):
     x, y, score = scaled_keypoints[i]
     is_confident = score > confidence_threshold
     print(ordered_keypoint_labels[i], x, y, score, is_confident)
+
+# Draw connections as lines.
+for i in range(len(edges)):
+    index1, index2 = edges[i]
+    x1, y1, score1 = scaled_keypoints[index1]
+    x2, y2, score2 = scaled_keypoints[index2]
+
+    if(score1 > confidence_threshold and score2 > confidence_threshold):
+        cv2.line(image, (int(y1), int(x1)), (int(y2), int(x2)), (0, 0, 255), 4)
 
 # Draw keypoints as circles.
 for i in range(scaled_keypoints.shape[0]):
