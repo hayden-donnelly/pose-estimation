@@ -6,7 +6,7 @@ Tests/demos of various pre-trained pose estimation models.
 ## Setup
 
 After cloning, create a new folder called ``data`` in the root of the repository. Then create another folder inside ``data`` called ``input``.
-Finally, place the video you wish to perform pose estimation on inside of ``data/input`` and rename it to ``pose_estimation_benchmark2.mp4``.
+Finally, place the video you wish to perform pose estimation on inside of ``data/input``, and rename it to ``pose_estimation_benchmark2.mp4``.
 Once this is done, you can run ``movenet.py`` and the output will be saved to ``data/output``.
 
 ## Docker Environment
