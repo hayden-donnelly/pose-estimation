@@ -110,11 +110,5 @@ if __name__ == "__main__":
     model = hub.load("https://tfhub.dev/google/movenet/multipose/lightning/1")
     movenet = model.signatures['serving_default']
 
-    video_pose_estimation("../data/input/dance_video.mp4", movenet)
-    #video = cv2.VideoCapture('../data/input/dance_video_short.mp4')
-
-    # Check if the video was loaded successfully.
-    #if not video.isOpened():
-    #    print("Error loading video file")
-
+    video_pose_estimation("../data/input/pose_estimation_benchmark_02.mp4", movenet)
     
