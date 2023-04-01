@@ -69,7 +69,7 @@ def video_pose_estimation(input_data_path, model):
 
     # Define the codec and create VideoWriter object.
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    out = cv2.VideoWriter('../data/output/movenet_video_output.mp4', fourcc, 25.0, (width, height))
+    out = cv2.VideoWriter('../data/output/movenet_video_output.mp4', fourcc, 30.0, (width, height))
 
     # Loop through the video frame by frame.
     while video.isOpened():
@@ -85,19 +85,17 @@ def video_pose_estimation(input_data_path, model):
         output = outputs['output_0'].numpy()
 
         # Throw away bounding box, then reshape.
-        keypoints = output[0, :6, :17*3].reshape(1, 6, 17, 3)
+        keypoints = output[0, :output.shape[1], :17*3].reshape(output.shape[1], 17, 3)
 
-        # Throw away extra keypoints.
-        keypoints = keypoints[0, 0]
+        for i in range(keypoints.shape[0]):
+            # Scale keypoints to original image dimensions.
+            scaled_keypoints = np.multiply(keypoints[i], [height, width, 1])
 
-        # Scale keypoints to original image dimensions.
-        scaled_keypoints = np.multiply(keypoints, [height, width, 1])
+            # Draw connections as lines.
+            draw_connections(frame, scaled_keypoints)
 
-        # Draw connections as lines.
-        draw_connections(frame, scaled_keypoints)
-
-        # Draw keypoints as circles.
-        draw_keypoints(frame, scaled_keypoints)
+            # Draw keypoints as circles.
+            draw_keypoints(frame, scaled_keypoints)
 
         # Write the modified frame to the output video.
         out.write(frame)
