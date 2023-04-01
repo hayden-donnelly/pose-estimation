@@ -1,4 +1,4 @@
-# pose-estimation-tests
+# pose-estimation
 Tests/demos of various pre-trained pose estimation models.
 
 [Example Video](https://youtu.be/N1KlFnjoEtg)
