@@ -1,7 +1,7 @@
 # pose-estimation
 Tests/demos of various pre-trained pose estimation models.
 
-[Example Video](https://youtu.be/N1KlFnjoEtg)
+[Singlepose Example](https://youtu.be/N1KlFnjoEtg), [Multipose Example](https://youtu.be/XxJNebC_oqc)
 
 ## Setup
 
