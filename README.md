@@ -1,5 +1,5 @@
 # pose-estimation
-Tests/demos of various pre-trained pose estimation models.
+Demo of movenet pose estimation. Can be used to create videos with overlayed pose estimations for up to six people.
 
 [Singlepose Example](https://youtu.be/N1KlFnjoEtg), [Multipose Example](https://youtu.be/XxJNebC_oqc)
 
