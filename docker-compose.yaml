@@ -1,13 +1,12 @@
-version: "1"
 services:
   app:
     build: .
+    ports:
+      - 8888:8888
     volumes:
       - .:/project
-    #deploy:
-    #  resources:
-    #    reservations:
-    #      devices:
-    #        - driver: nvidia
-    #          count: 1
-    #          capabilities: [gpu]
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - capabilities: [gpu]
