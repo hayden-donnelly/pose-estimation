@@ -15,9 +15,21 @@ Building image:
 docker-compose build
 ```
 
-Running environment:
+Starting container/environment:
 ```
-docker-compose run --rm app
+docker-compose up -d
+```
+
+Opening a shell in container:
+```
+docker-compose exec app bash
+```
+
+Instead of opening a shell, you can also go to http://localhost:8888/ to access a Jupyter Lab instance running inside the container.
+
+Stopping container/environment:
+```
+docker-compose down
 ```
 
 ## Example Output
