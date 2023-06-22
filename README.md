@@ -3,11 +3,15 @@ Demo of movenet pose estimation. Can be used to create videos with overlayed pos
 
 [Singlepose Example](https://youtu.be/N1KlFnjoEtg), [Multipose Example](https://youtu.be/XxJNebC_oqc)
 
-## Setup
+## Usage
 
-After cloning, create a new folder called ``data`` in the root of the repository. Then create another folder inside ``data`` called ``input``.
-Finally, place the video you wish to perform pose estimation on inside of ``data/input``, and rename it to ``pose_estimation_benchmark2.mp4``.
-Once this is done, you can run ``movenet.py`` and the output will be saved to ``data/output``.
+Run ``movenet.py`` with ``--path`` set to the input video path. The output will be saved to ``data/output``.
+
+Example:
+
+```
+python movenet.py --path ../data/input/pose_estimation_video.mp4
+```
 
 ## Docker Environment
 Building image:
