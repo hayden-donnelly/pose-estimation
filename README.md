@@ -5,13 +5,19 @@ Demo of movenet pose estimation. Can be used to create videos with overlayed pos
 
 ## Usage
 
-Run ``movenet.py`` with ``--path`` set to the input video path. The output will be saved to ``data/output``.
+Run ``movenet.py`` with ``--input_path`` set to the input video path. By default the output will be saved to ``./data``.
 
 Example:
 
 ```
 python movenet.py --path ../data/input/pose_estimation_video.mp4
 ```
+
+Full list of parameters:
+
+- ``--input_path``: Path to input video file. Default: ``None``
+- ``--output_path``: Path to output directroy. Default: ``./data``
+- ``--conficence_threshold``: Confidence threshold for keypoints. Default: ``0.1``
 
 ## Docker Environment
 Building image:
