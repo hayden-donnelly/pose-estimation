@@ -17,7 +17,7 @@ Full list of parameters:
 
 - ``--input_path``: Path to input video file. Default: ``None``
 - ``--output_path``: Path to output directroy. Default: ``./data``
-- ``--conficence_threshold``: Confidence threshold for keypoints. Default: ``0.1``
+- ``--confidence_threshold``: Confidence threshold for keypoints. Default: ``0.1``
 
 ## Docker Environment
 Building image:
